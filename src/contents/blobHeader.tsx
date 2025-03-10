@@ -34,9 +34,9 @@ export const getStyle = () => {
 
 export default function FloatingWithProviders({ anchor }: PlasmoCSUIProps) {
   const { url: sourcegraphUrl } = useSourcegraphStore()
-  const isDarkMode = !!(
-    document.documentElement.getAttribute("data-color-mode") === "dark"
-  )
+  const isDarkMode = !!document.documentElement
+    .getAttribute("data-dark-theme")
+    ?.startsWith("dark")
 
   let url: string = window.location.href
     .replace("https://", "")
