@@ -1,8 +1,8 @@
 {
-  "name": "plasmo-shadcn-extension-template",
-  "displayName": "Plasmo Shadcn Extension Template",
-  "version": "0.0.1",
-  "description": "Plasmo Shadcn Extension Template",
+  "name": "sourcegraph",
+  "displayName": "Sourcegraph",
+  "version": "24.0.0",
+  "description": "Adds code intelligence to GitHub, GitLab, and other hosts: hovers, definitions, references. For 20+ languages.",
   "author": "https://www.fiverr.com/bensbahou",
   "scripts": {
     "dev": "plasmo dev",
@@ -14,10 +14,6 @@
     "@plasmohq/messaging": "^0.6.2",
     "@radix-ui/react-slot": "^1.1.0",
     "@swc/types": "^0.1.17",
-    "@tanstack/react-query": "^4.36.1",
-    "@trpc/client": "^10.45.1",
-    "@trpc/react-query": "^10.45.1",
-    "@trpc/server": "^10.45.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.456.0",
@@ -29,7 +25,6 @@
     "tailwind-merge": "^2.5.4",
     "tailwindcss": "3.4.1",
     "tailwindcss-animate": "^1.0.7",
-    "trpc-chrome": "^1.0.0",
     "zod": "^3.24.1",
     "zustand": "^5.0.1"
   },
@@ -46,9 +41,6 @@
   },
   "manifest": {
     "key": "$CRX_PUBLIC_KEY",
-    "host_permissions": [
-      "https://www.plasmo.com/*"
-    ],
     "permissions": [
       "storage"
     ]

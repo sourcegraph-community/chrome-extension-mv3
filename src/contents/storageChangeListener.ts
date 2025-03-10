@@ -1,12 +1,16 @@
+import type { PlasmoCSConfig } from "plasmo"
+
 import { listenForStorageChanges } from "~lib/listenForStorageChanges"
-import { useBearStore } from "~stores/useBearStore"
+import { useSourcegraphStore } from "~stores/useSourcegraphStore"
 
 export {}
-console.log("Storage change listener initialized!")
+export const config: PlasmoCSConfig = {
+  matches: ["https://github.com/*"]
+}
 
 listenForStorageChanges("content-script", [
   {
-    name: "useBearStore",
-    setStateFunction: useBearStore.setState
+    name: "useSourcegraphStore",
+    setStateFunction: useSourcegraphStore.setState
   }
 ])
