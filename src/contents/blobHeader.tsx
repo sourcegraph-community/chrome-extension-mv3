@@ -70,7 +70,10 @@ export default function FloatingWithProviders({ anchor }: PlasmoCSUIProps) {
   return (
     <a
       href={`${sourcegraphUrl}/${url}`}
-      className="pl-2 h-8 flex items-center ">
+      className="ml-2 pl-2 pr-2 h-8 flex items-center border border-gray-300 rounded-md hover:bg-gray-200 transition-colors duration-200"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="Open in Sourcegraph">
       <img src={sourcegraphLogo} alt="Sourcegraph" width="20" height="20" />
       {url.endsWith("ndefined") && "Undefined"}
     </a>
