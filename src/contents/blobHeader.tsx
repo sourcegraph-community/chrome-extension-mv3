@@ -34,6 +34,10 @@ export const getStyle = () => {
 
 export default function FloatingWithProviders({ anchor }: PlasmoCSUIProps) {
   const { url: sourcegraphUrl } = useSourcegraphStore()
+  const isDarkMode = !!(
+    document.documentElement.getAttribute("data-color-mode") === "dark"
+  )
+
   let url: string = window.location.href
     .replace("https://", "")
     .split("/")
@@ -46,10 +50,10 @@ export default function FloatingWithProviders({ anchor }: PlasmoCSUIProps) {
       .querySelector("details>details-menu.select-menu-modal[src*='sha1']")
       ?.getAttribute("src")
     if (!fragmentUrl) {
-      console.log("no fragmentUrl")
+      //console.log("no fragmentUrl")
       return
     }
-    console.log("fragmentUrl", fragmentUrl)
+    // console.log("fragmentUrl", fragmentUrl)
     const urlParams = new URLSearchParams(fragmentUrl.split("?")[1] || "")
     const sha1 = urlParams.get("sha1")
     const sha2 = urlParams.get("sha2")
@@ -57,7 +61,7 @@ export default function FloatingWithProviders({ anchor }: PlasmoCSUIProps) {
     if (sha1 && sha2) {
       diffHash = `${sha1}...${sha2}`
     }
-    console.log("diffHash", diffHash)
+    // console.log("diffHash", diffHash)
 
     // Find the closest ancestor with an ID that starts with "diff" using a CSS selector
 
@@ -67,10 +71,16 @@ export default function FloatingWithProviders({ anchor }: PlasmoCSUIProps) {
       .replace("https://", "")
       .replace("/blob/main", "/-/blob")
   }
+
+  // Define classes based on dark mode
+  const buttonClasses = isDarkMode
+    ? "ml-2 pl-2 pr-2 h-8 flex items-center rounded-md bg-black border border-[#444c56] hover:bg-[#2d333b] transition-colors duration-200"
+    : "ml-2 pl-2 pr-2 h-8 flex items-center border border-gray-300 rounded-md hover:bg-gray-200 transition-colors duration-200"
+
   return (
     <a
       href={`${sourcegraphUrl}/${url}`}
-      className="ml-2 pl-2 pr-2 h-8 flex items-center border border-gray-300 rounded-md hover:bg-gray-200 transition-colors duration-200"
+      className={buttonClasses}
       target="_blank"
       rel="noopener noreferrer"
       title="Open in Sourcegraph">
