@@ -28,7 +28,7 @@ npm run build
 
 This should create a production bundle for your extension, ready to be zipped and published to the stores.
 
-## Testing
+## Manual QA Testing
 
 The following URLs can be used to test your extension build:
 
@@ -37,3 +37,7 @@ The following URLs can be used to test your extension build:
 - https://github.com/sourcegraph/conc
 - https://github.com/sourcegraph/conc/pull/150/files
 - https://github.com/sourcegraph/conc/blob/main/waitgroup.go
+
+### Change appearance of the extension (light/dark mode)
+
+- https://github.com/settings/appearance
