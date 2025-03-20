@@ -28,6 +28,12 @@ npm run build
 
 This should create a production bundle for your extension, ready to be zipped and published to the stores.
 
-## Submit to the webstores
+## Testing
 
-The easiest way to deploy your Plasmo extension is to use the built-in [bpp](https://bpp.browser.market) GitHub action. Prior to using this action however, make sure to build your extension and upload the first version to the store to establish the basic credentials. Then, simply follow [this setup instruction](https://docs.plasmo.com/framework/workflows/submit) and you should be on your way for automated submission!
+The following URLs can be used to test your extension build:
+
+### Click Sourcegraph icon buttons
+
+- https://github.com/sourcegraph/conc
+- https://github.com/sourcegraph/conc/pull/150/files
+- https://github.com/sourcegraph/conc/blob/main/waitgroup.go
