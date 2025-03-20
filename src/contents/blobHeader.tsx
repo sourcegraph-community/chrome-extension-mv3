@@ -34,9 +34,11 @@ export const getStyle = () => {
 
 export default function FloatingWithProviders({ anchor }: PlasmoCSUIProps) {
   const { url: sourcegraphUrl } = useSourcegraphStore()
-  const isDarkMode = !!document.documentElement
-    .getAttribute("data-dark-theme")
-    ?.startsWith("dark")
+
+  // github stores the theme in the document element.
+  const githubTheme = window.location.host === 'github.com' ? document.documentElement.dataset.colorMode : 'auto'
+  const osThemeIsDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  const isDarkMode = githubTheme === 'dark' || (githubTheme === 'auto' && osThemeIsDark)
 
   let url: string = window.location.href
     .replace("https://", "")
