@@ -74,7 +74,7 @@ export default function FloatingWithProviders({ anchor }: PlasmoCSUIProps) {
 
   // Define classes based on dark mode
   const buttonClasses = isDarkMode
-    ? "ml-2 pl-2 pr-2 h-8 flex items-center rounded-md bg-black border border-[#444c56] hover:bg-[#2d333b] transition-colors duration-200"
+    ? "ml-2 pl-2 pr-2 h-8 flex items-center rounded-md border border-[#444c56] hover:bg-[#2d333b] transition-colors duration-200"
     : "ml-2 pl-2 pr-2 h-8 flex items-center border border-gray-300 rounded-md hover:bg-gray-200 transition-colors duration-200"
 
   return (
